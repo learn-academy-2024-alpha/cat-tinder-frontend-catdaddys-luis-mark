@@ -1,6 +1,6 @@
 import React from "react";
 
-const CatTinderNotFound = () => {
+const NotFound = () => {
   return (
     <div className="not-found-container">
       <img src="cat_not_found_image_url" alt="Cat Not Found" />
@@ -11,4 +11,4 @@ const CatTinderNotFound = () => {
   );
 };
 
-export default CatTinderNotFound;
+export default NotFound;
