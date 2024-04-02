@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Nav className="me-auto">
       <div>
-        <h1 className= "header-text">Welcome To CatDaddy's </h1>
+        <h1 className= "header-text">Nav Bar</h1>
         <NavLink to="/">
           <img
             src={catdaddylogo}
@@ -24,11 +24,11 @@ const Header = () => {
           Add a Cat
         </NavLink>
         <a
-          href=""
+          href="https://catleidoscope.sergethew.com/"
           target="blank"
           className="nav-link"
         >
-          Find a Cat
+          CATLEIDOSCOPE!
         </a>
       </div>
     </Nav>

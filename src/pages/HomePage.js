@@ -4,7 +4,7 @@ import React from "react"
 const homeScreen = () =>{
   return (
     <>
-
+<h3 className="home-header">Welcome To CatDaddy's</h3>
     </>
   )
 }
