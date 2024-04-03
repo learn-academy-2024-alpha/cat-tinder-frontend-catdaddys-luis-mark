@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 const CatShow = ({ cats }) => {
   const { id } = useParams();
-  const currentCat = cats.find((cat) => cat.id === +(id));
+  const currentCat = cats.find((catObject) => catObject.id === +id);
 
   return currentCat ? (
     <main className="cat-show-container">
@@ -13,7 +13,7 @@ const CatShow = ({ cats }) => {
       <p>Enjoys: {currentCat.enjoys}</p>
     </main>
   ) : (
-    <p>Cat not found!</p>
+    <p>Cat Show Page</p>
   );
 };
 

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import CatIndex from './CatIndex';
+import CatIndex from '../pages/CatIndex';
 import mockCats from '../mockCats'; // Assuming you have this file with your mock data
 
 describe('<CatIndex />', () => {
@@ -10,7 +10,7 @@ describe('<CatIndex />', () => {
         <CatIndex cats={mockCats} />
       </BrowserRouter>
     );
-    expect(screen.getByText('Cat Index Page')).toBeInTheDocument();
+    expect(screen.getAllByText(`See More Details`).length).toBe(mockCats.length);
   });
 
   it('renders cat cards', () => {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import CatShow from './CatShow';
+import CatShow from '../pages/CatShow';
 import mockCats from '../mockCats'; // Your mock data
 
 describe('<CatShow />', () => {
@@ -12,6 +12,6 @@ describe('<CatShow />', () => {
         </Routes>
       </MemoryRouter> 
          );
-         expect(screen.getByText('Cat Show Page')).toBeInTheDocument();
+         expect(screen.getByText('Chester')).toBeInTheDocument();
        });
      });
