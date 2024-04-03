@@ -8,7 +8,7 @@ const cats = [
 {
     name:'MackMittens',
     age: 4,
-    njoys: 'Dumpster diving and strutting down an alley.',
+    enjoys: 'Dumpster diving and strutting down an alley.',
     image:'https://i.pinimg.com/564x/c3/9a/c5/c39ac5ebf279969584e8e12b7622c556.jpg'},
 {
     name:'SouthPaw',
