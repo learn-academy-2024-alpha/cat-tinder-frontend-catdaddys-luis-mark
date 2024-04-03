@@ -7,7 +7,7 @@ const Footer = () =>{
       <h1 className= "footer-text">Footer</h1>
       <img
         src={catdaddylogo}
-        alt="outline of a cat profile and cat tinder in capitalized letters"
+        alt="small neon cat daddy logo"
         className="catlogosmall"
       />
     </>
