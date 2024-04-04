@@ -51,7 +51,7 @@ const CatNew = ({ createNewCat }) => {
                 {...register("name", { required: true })}
               />
               {errors.name && (
-                <span >Name is required</span>
+                <span>Name is required</span>
               )}
             </FormGroup>
           </Col>
@@ -68,7 +68,7 @@ const CatNew = ({ createNewCat }) => {
                 {...register("age", { required: true })}
               />
               {errors.age && (
-                <span >Age is required</span>
+                <span>Age is required</span>
               )}
             </FormGroup>
           </Col>
@@ -84,7 +84,7 @@ const CatNew = ({ createNewCat }) => {
             {...register("enjoys", { required: true })}
           />
           {errors.enjoys && (
-            <span >Enjoys is required</span>
+            <span>Enjoys is required</span>
           )}
         </FormGroup>
         <FormGroup>
@@ -98,14 +98,11 @@ const CatNew = ({ createNewCat }) => {
             {...register("image", { required: true })}
           />
           {errors.image && (
-            <span >Image is required</span>
+            <span>Image is required</span>
           )}
         </FormGroup>
         <div className="centering-content">
-          <button
-            type="submit"
-            className="nav-button gochi-hand-regular"
-          >
+          <button type="submit">
             Submit
           </button>
         </div>
