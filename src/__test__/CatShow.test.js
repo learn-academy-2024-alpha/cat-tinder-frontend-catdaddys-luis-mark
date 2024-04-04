@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import CatShow from '../pages/CatShow';
-import mockCats from '../mockCats'; // Your mock data
+import mockCats from '../mockCats'; 
 
 describe('<CatShow />', () => {
   it('renders without crashing', () => {
