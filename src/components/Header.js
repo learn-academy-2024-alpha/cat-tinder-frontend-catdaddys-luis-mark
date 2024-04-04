@@ -17,7 +17,7 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="header-nav-links">
-        <NavLink to="/cat-index" className="nav-link">
+        <NavLink to="/catindex" className="nav-link">
           Meet All the Cats
         </NavLink>
         <NavLink to="/cat-new" className="nav-link">
