@@ -31,22 +31,7 @@ const CatNew = ({ addNewCat }) => {
           <path d="M90,150 Q100,160 110,150" stroke="#d0d0d0" stroke-width="5" fill="none" /> {/* Mouth */}
         </svg>
       </div>
-      <form onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <input type="text" name="name" value={newCat.name} onChange={handleChange} />
-
-        <label>Age:</label>
-        <input type="number" name="age" value={newCat.age} onChange={handleChange} />
-
-        <label>Enjoys:</label>
-        <textarea name="enjoys" value={newCat.enjoys} onChange={handleChange} />
-
-        <label>Image URL:</label>
-        <input type="text" name="image" value={newCat.image} onChange={handleChange} />
-
-        <button type="submit">Create Cat Profile</button>
-      </form>
-    </>
+     </>
   );
 };
 
