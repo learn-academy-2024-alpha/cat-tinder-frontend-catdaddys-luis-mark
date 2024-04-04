@@ -5,9 +5,12 @@ import catdaddylogo from "../assets/catdaddylogo.png"
 
 const Header = () => {
   return (
+
     <Nav className="me-auto">
       <div>
-        <h1 className= "header-text">Nav Bar</h1>
+        <div className="header-content">
+      <h1 className="home-header">WELCOME TO CATDADDY'S</h1>
+        </div>
         <NavLink to="/">
           <img
             src={catdaddylogo}
