@@ -41,12 +41,12 @@ button, .btn-primary {
   background-color: #0bd3d3;
   border: none;
   color: #ffffff;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
-  box-shadow: 0 0 0 transparent; /* Initial box-shadow is transparent */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
 }
 
 button:hover, .btn-primary:hover {
-  background-color: #f890e7 ; /* Change background color to pink on hover */
+  background-color: #f890e7 ;
   box-shadow: 0 0 20px #f890e7;
 }
 
@@ -54,12 +54,12 @@ button:hover, .btn-primary:hover {
   background-color: #02ffff !important;
   border: none;
   color: #ffffff !important;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
-  box-shadow: 0 0 0 transparent; /* Initial box-shadow is transparent */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
 }
 
 .custom-btn:hover {
-  background-color: #f890e7 !important; /* Change background color to pink on hover */
+  background-color: #f890e7 !important;
   box-shadow: 0 0 20px #f890e7;
 }
 
