@@ -20,7 +20,6 @@ const App = () => {
     console.log(editCat, id)
   }
   const deleteCat = (id) => {
-    setCats(cats.filter(cat => cat.id !== id));
     console.log(id)
   }
   return (
