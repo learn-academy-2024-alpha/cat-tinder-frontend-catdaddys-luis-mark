@@ -9,6 +9,6 @@ describe("<Home />", () => {
       <BrowserRouter>
         <Home />
       </BrowserRouter>);
-      expect(getByText("Welcome To CatDaddy's")).toBeInTheDocument();
+      expect(getByText("WELCOME TO CATDADDY'S")).toBeInTheDocument();
     });
   });

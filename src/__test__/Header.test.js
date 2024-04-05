@@ -9,6 +9,6 @@ describe("<Header />", () => {
       <BrowserRouter>
         <Header />
       </BrowserRouter>);
-      expect(getByAltText("outline of a cat profile and cat tinder in capitalized letters")).toBeInTheDocument();
+      expect(getByAltText("CAT DADDY'S IN YOUR AREA")).toBeInTheDocument();
     });
   });

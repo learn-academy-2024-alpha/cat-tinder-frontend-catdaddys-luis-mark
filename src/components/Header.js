@@ -5,37 +5,18 @@ import catdaddylogo from "../assets/catdaddylogo.png"
 
 const Header = () => {
   return (
+    <header className="header-container">
+      <NavLink to="/" className="logo-container">
+        <img src={catdaddylogo} alt="Cat Daddy's logo" className="catdaddylogo" />
+      </NavLink>
 
-    <Nav className="me-auto">
-      <div>
-        <div className="header-content">
-      <h1 className="home-header">WELCOME TO CATDADDY'S</h1>
-        </div>
-        <NavLink to="/">
-          <img
-            src={catdaddylogo}
-            alt="outline of a cat profile and cat tinder in capitalized letters"
-            className="catdaddylogo"
-          />
-        </NavLink>
-      </div>
-      <div className="header-nav-links">
-        <NavLink to="/catindex" className="nav-link">
-          Meet All the Cats
-        </NavLink>
-        <NavLink to="/cat-new" className="nav-link">
-          Add a Cat
-        </NavLink>
-        <a
-          href="https://catleidoscope.sergethew.com/"
-          target="blank"
-          className="nav-link"
-        >
-          CATLEIDOSCOPE!
-        </a>
-      </div>
-    </Nav>
-  )
-}
+      <nav className="header-nav-links">
+        <NavLink to="/catindex" className="nav-link">CAT DADDY'S IN YOUR AREA</NavLink>
+        <NavLink to="/catnew" className="nav-link">Add a Cat</NavLink>
+        <a href="https://catleidoscope.sergethew.com/" target="_blank" rel="noopener noreferrer" className="nav-link">CATLEIDOSCOPE!</a>
+      </nav>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

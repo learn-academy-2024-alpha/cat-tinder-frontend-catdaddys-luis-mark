@@ -1,4 +1,4 @@
-.App {
+.App, home-container {
   text-align: center;
 }
 * {
@@ -7,8 +7,8 @@
 .catdaddylogo{
   width: 50%;
   height:auto;
-  margin: 2rem;
 }
+
 /* Footer */
 footer {
   color: white;
@@ -18,11 +18,12 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: end; /* Center the footer content */
 }
 .footer-content {
   display: flex;
   align-items: end;
-  justify-content: end;
+  justify-content: space-between;
   padding-right: 20px;
 
 }
@@ -49,14 +50,21 @@ footer {
   display: flex;
   justify-content: center; /* Horizontal centering */
   align-items: center; /* Vertical centering (if needed) */
-  height: 100px; /* Define height */
+  margin-top: 20px;
 }
 .homepage-phrase {
   font-size: 1.5rem;
   color: #ffffff;
   margin: 20px 0;
   animation: pulse 2s infinite;
-  text-align: center;
+  
+}
+.home-header{
+  color: #0BD3D3;
+  margin-bottom: 20px; /* Adjust as needed */
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 /* --BUTTON STYLING-- */
 button, .btn-primary {
@@ -102,29 +110,59 @@ button:hover, .btn-primary:hover {
   color: #fff;
 }
 /* Header */
+
+/* logo */
+.logo-container img{
+  width: 250px; /* Adjust the width to make the logo smaller or larger */
+  height: auto; 
+}
+
+@media (max-width: 768px) {
+  .logo-container img {
+    width: 80px; /* Smaller size for tablets and mobile phones */
+  }
+}
+
+  @media (max-width: 480px) {
+    .logo-container img {
+      width: 60px; /* Smaller size for small mobile phones */
+    }
+  }
+
+/* logo🔼 */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Align logo to left and nav-links to right */
+  align-items: center; /* Align items vertically */
+  padding: 0 20px; /* Adjust based on your design */
+}
 .header-nav-links {
   display: flex;
-  margin-top: 1rem;
+  gap: 20px; /* Add space between links */
+  
 }
-.nav {
+nav {
   justify-content: space-between;
 }
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 .nav-link {
-  color: #60477c !important;
+  color: #0BD3D3 !important; /* Ensure this is the color you want for the text */
+  text-decoration: none; /* Remove underline from links */
+  padding: 0.5rem; /* Optional: Adds padding for better clickability */
 }
 .header-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* Stack items vertically */
-}
-.home-header{
-  color: #0BD3D3	;
   text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
 }
+
 .cat-index-header{
   color:white;
 }
@@ -133,6 +171,13 @@ button:hover, .btn-primary:hover {
 }
 .cat-show-header{
   color:white;
+}
+/* Cat-home */
+.cat-show-image {
+  max-width: 300px; /* Adjust as needed */
+  height: auto;
+  display: block; /* Center the image */
+  margin: 0 auto; /* Center the image horizontally */
 }
 /* CatForm-CatNew.css */
 form {
@@ -182,9 +227,8 @@ form {
 .inputGroup button:hover {
   background-color: #f890e7;
 }
-.mySVG {
-  fill: #f890e7;
-}
+
+
 @keyframes glow {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF1493, 0 0 40px #FF1493, 0 0 50px #FF1493, 0 0 60px #FF1493, 0 0 70px #FF1493;
