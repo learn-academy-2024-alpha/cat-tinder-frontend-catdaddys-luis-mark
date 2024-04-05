@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Form, FormGroup, Label, Row } from "reactstrap"
 import { useForm } from "react-hook-form"
 import { useNavigate, useParams } from "react-router-dom"
-import { NavLink } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -30,9 +30,10 @@ const CatEdit = ({ cats, updateCat }) => {
   }
 
   return (
+   
     <div className="new-page-body">
       <h2 className="edit-cat">
-        Upadte Your Cat Daddy
+        Upadate Your Cat Daddy
       </h2>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Row>
@@ -103,10 +104,15 @@ const CatEdit = ({ cats, updateCat }) => {
             Submit
           </button>
         </div>
-      <NavLink url="/catindex" buttonContent="Back to All the Cats" />
       </Form>
-      
-    </div>
+      <div className="back-button">
+        <NavLink to="/catindex" className="btn btn-secondary">
+            Back to CAT DADDY'S IN YOUR AREA
+        </NavLink>
+       </div>
+      </div>
+    
+   
   )
 }
 
