@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Col, Form, FormGroup, Label, Row } from "reactstrap"
 import { useForm } from "react-hook-form"
 import { useNavigate, useParams } from "react-router-dom"
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import updatecat from "../assets/updatecat.png"
+import backbutton from "../assets/backbutton.png"
 
 
 
@@ -33,13 +35,14 @@ const CatEdit = ({ cats, updateCat }) => {
    
     <div className="new-page-body">
       <h2 className="edit-cat">
-        Upadate Your Cat Daddy
+        Update Your Cat Daddy Info
       </h2>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form className="cat-form" onSubmit={handleSubmit(onSubmit)}>
+      <img src={updatecat} alt="update cat" className="add-cat-image" />
         <Row>
           <Col md={6}>
             <FormGroup>
-              <Label for="name">Enter Cat's Name</Label>
+              <Label for="name">Update Name</Label>
               <input
                 id="name"
                 name="name"
@@ -55,7 +58,7 @@ const CatEdit = ({ cats, updateCat }) => {
           </Col>
           <Col md={6}>
             <FormGroup>
-              <Label for="age">Enter Your Cat's Age</Label>
+              <Label for="age">Update Age</Label>
               <input
                 id="age"
                 name="age"
@@ -72,7 +75,7 @@ const CatEdit = ({ cats, updateCat }) => {
           </Col>
         </Row>
         <FormGroup>
-          <Label for="enjoys">What does your cat enjoy doing?</Label>
+          <Label for="enjoys">What Do You Enjoy Now Cat Daddy?</Label>
           <input
             id="enjoys"
             name="enjoys"
@@ -105,12 +108,14 @@ const CatEdit = ({ cats, updateCat }) => {
           </button>
         </div>
       </Form>
+      <div className="back-button-container">
       <div className="back-button">
-        <NavLink to="/catindex" className="btn btn-secondary">
-            Back to CAT DADDY'S IN YOUR AREA
+        <NavLink to={`/catshow/${cat.id}`}>
+          <img src={backbutton} alt="Back Button Cat Image" />
         </NavLink>
-       </div>
       </div>
+    </div>
+  </div>
     
    
   )

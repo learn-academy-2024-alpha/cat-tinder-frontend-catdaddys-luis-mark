@@ -10,8 +10,8 @@ const CatIndex = ({ cats }) => {
         <Card key={cat.id} style={{ width: '18rem' }}>
           <img alt={`profile of a cat named ${cat.name}`} src={cat.image} />
           <CardBody>
-            <CardTitle tag="h5">{cat.name}</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
+            <CardTitle tag="h5" className="cat-index-name">{cat.name}</CardTitle>
+            <CardSubtitle tag="h6" className="cat-index-age">
               Age: {cat.age}
             </CardSubtitle>
             <NavLink to={`/catshow/${cat.id}`} className="btn btn-primary custom-btn">          See More Details
