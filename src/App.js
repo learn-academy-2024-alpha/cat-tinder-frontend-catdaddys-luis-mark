@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { Routes, Route } from "react-router-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import CatEdit from "./pages/CatEdit"
@@ -8,43 +9,102 @@ import CatShow from "./pages/CatShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import "./App.css"
-import { Routes, Route } from "react-router-dom"
-import mockCats from "./mockCats"
 
 const App = () => {
-  const [cats, setCats] = useState(mockCats)
-  const createNewCat = (newCat) => {
-    console.log(newCat)
+  const [cats, setCats] = useState([])
+  useEffect(() => {
+    readCat()
+  }, [])
+  const readCat = () => {
+    fetch("http://localhost:3000/cats")
+      .then((response) => response.json())
+      .then((payload) => setCats(payload))
+      .catch((error) => console.log(error))
   }
-  const updateCat = (editCat, id) => {
-    console.log(editCat, id)
+  const getCats = async () => {
+    try {
+      const getResponse = await fetch("http://localhost:3000/cats")
+      if (!getResponse.ok) {
+        throw new Error("Error on the get request for cats")
+      }
+      const getResult = await getResponse.json()
+      setCats(getResult)
+    } catch (error) {
+      alert("Ooops something went wrong:", error.message)
+    }
   }
-  const deleteCat = (id) => {
-    console.log(id)
+  const createNewCat = async (newCat) => {
+    try {
+      const postResponse = await fetch("http://localhost:3000/cats", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newCat)
+      })
+      if (!postResponse.ok) {
+        throw new Error("Error on the post request for cats")
+      }
+      await postResponse.json()
+      getCats()
+    } catch (error) {
+      alert("Ooops something went wrong:", error.message)
+    }
+  }
+  const updateCat = async (editCat, id) => {
+    try {
+      const patchResponse = await fetch(`http://localhost:3000/cats/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(editCat)
+      })
+      if (!patchResponse.ok) {
+        throw new Error("Error on the patch request for cats")
+      }
+      await patchResponse.json()
+      getCats()
+    } catch (error) {
+      alert("Ooops something went wrong:", error.message)
+    }
+  }
+  const deleteCat = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3000/cats/${id}`, {
+        method: "DELETE"
+      })
+      if (!response.ok) {
+        throw new Error("Error on cat delete request")
+      }
+      getCats()
+    } catch (error) {
+      alert("Oops something went wrong:", error.message)
+    }
   }
   return (
     <>
-    <Header />
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/catindex" element={<CatIndex cats={cats} />} />
-    <Route
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/catindex" element={<CatIndex cats={cats} />} />
+        <Route
           path="catshow/:id"
           element={<CatShow cats={cats} deleteCat={deleteCat} />}
         />
-    <Route
+        <Route
           path="catnew/"
-          element={<CatNew createNewCat={createNewCat} />}
+          element={<CatNew cats={cats}createNewCat={createNewCat} />}
         />
-    <Route
+        <Route
           path="catedit/:id"
           element={<CatEdit cats={cats} updateCat={updateCat} />}
         />
-    <Route path="*" element={<NotFound />} />
-  </Routes>
-    <Footer />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
     </>
-    )
+  )
 }
 
 export default App;
