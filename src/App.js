@@ -13,14 +13,7 @@ import "./App.css"
 const App = () => {
   const [cats, setCats] = useState([])
   useEffect(() => {
-    readCat()
   }, [])
-  const readCat = () => {
-    fetch("http://localhost:3000/cats")
-      .then((response) => response.json())
-      .then((payload) => setCats(payload))
-      .catch((error) => console.log(error))
-  }
   const getCats = async () => {
     try {
       const getResponse = await fetch("http://localhost:3000/cats")
