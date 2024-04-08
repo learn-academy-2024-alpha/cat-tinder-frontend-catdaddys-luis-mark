@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Col, Form, FormGroup, Label, Row } from "reactstrap"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
+import addcat from "../assets/addcat.png"
+import backbutton from "../assets/backbutton.png"
 
 
 
@@ -21,13 +24,14 @@ const CatNew = ({ createNewCat }) => {
   return (
     <div className="new-page-body">
       <h2 className="add-new-cat">
-        Add a New Cat
+        Become A Cat Daddy
       </h2>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form  className="cat-form" onSubmit={handleSubmit(onSubmit)}>
+      <img src={addcat} alt="Add a new cat" className="add-cat-image" />
         <Row>
           <Col md={6}>
             <FormGroup>
-              <Label for="name">Enter Cat's Name</Label>
+              <Label for="name">What's You Name Cat Daddy?</Label>
               <input
                 id="name"
                 name="name"
@@ -43,7 +47,7 @@ const CatNew = ({ createNewCat }) => {
           </Col>
           <Col md={6}>
             <FormGroup>
-              <Label for="age">Enter Your Cat's Age</Label>
+              <Label for="age">How Young Are You, Cat Daddy?</Label>
               <input
                 id="age"
                 name="age"
@@ -60,7 +64,7 @@ const CatNew = ({ createNewCat }) => {
           </Col>
         </Row>
         <FormGroup>
-          <Label for="enjoys">What does your cat enjoy doing?</Label>
+          <Label for="enjoys">Let The Ladies Know! What Do You Enjoy?</Label>
           <input
             id="enjoys"
             name="enjoys"
@@ -93,7 +97,14 @@ const CatNew = ({ createNewCat }) => {
           </button>
         </div>
       </Form>
+      <div className="back-button-container">
+      <div className="back-button">
+        <NavLink to={`/`}>
+          <img src={backbutton} alt="Back Button Cat Image" />
+        </NavLink>
+      </div>
     </div>
+  </div>
   )
 }
 

@@ -1,4 +1,4 @@
-.App, home-container {
+.App, .home-container {
   text-align: center;
 }
 * {
@@ -7,6 +7,10 @@
 .catdaddylogo{
   width: 50%;
   height:auto;
+  transition: transform 0.3s ease;
+}
+.catdaddylogo:hover {
+  transform: scale(1.1); 
 }
 
 /* Footer */
@@ -18,7 +22,7 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end; /* Center the footer content */
+  justify-content: end; 
 }
 .footer-content {
   display: flex;
@@ -45,23 +49,31 @@ footer {
   justify-content: space-around;
   gap: 1rem;
 }
+.cat-index-name {
+  color: #fff !important;
+}
+.cat-index-age {
+  color: #fff !important;
+}
 /* --HOME-- */
 .homeimagelogo{
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering (if needed) */
+  justify-content: center; 
+  align-items: center; 
   margin-top: 20px;
+  animation: slide-in-bottom 2s;
 }
 .homepage-phrase {
   font-size: 1.5rem;
-  color: #ffffff;
+  background: linear-gradient(to right,  #0BD3D3 61%, #f890e7 39%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 20px 0;
   animation: pulse 2s infinite;
-  
 }
-.home-header{
+  .home-header{
   color: #0BD3D3;
-  margin-bottom: 20px; /* Adjust as needed */
+  margin-bottom: 20px; 
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
@@ -109,36 +121,75 @@ button:hover, .btn-primary:hover {
 .edit-text{
   color: #fff;
 }
+.btn-edit-cat{
+  background-color: #D0D0D0 !important;
+  border-color: #D0D0D0 !important;
+}
+.btn-edit-cat:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 20px #f890e7 !important;
+}
+.btn-delete-pink {
+  background-color: #f890e7 !important; 
+  border-color: #f890e7 !important; 
+}
+
+.btn-delete-pink:hover {
+  background-color: #0BD3D3 !important;
+  border-color: #0BD3D3 !important;
+}
+.btn-delete-cat {
+  background-color: #f890e7 !important;
+  border: none; 
+  color: #ffffff !important;
+}
+
+.btn-delete-cat:hover {
+  background-color: #0BD3D3 !important;
+}
+.btn-back-all-cats {
+  background-color: #0BD3D3 !important;
+  color: #ffffff !important;
+  border: none; 
+}
+
+.btn-back-all-cats:hover {
+  background-color: #ffaacb !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px #f890e7 !important;
+}
 /* Header */
 
 /* logo */
 .logo-container img{
-  width: 250px; /* Adjust the width to make the logo smaller or larger */
+  width: 250px; 
   height: auto; 
 }
 
 @media (max-width: 768px) {
   .logo-container img {
-    width: 80px; /* Smaller size for tablets and mobile phones */
+    width: 80px; 
   }
 }
 
   @media (max-width: 480px) {
     .logo-container img {
-      width: 60px; /* Smaller size for small mobile phones */
+      width: 60px; 
     }
   }
 
 /* logo🔼 */
 .header-container {
   display: flex;
-  justify-content: space-between; /* Align logo to left and nav-links to right */
-  align-items: center; /* Align items vertically */
-  padding: 0 20px; /* Adjust based on your design */
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 20px; 
 }
 .header-nav-links {
   display: flex;
-  gap: 20px; /* Add space between links */
+  gap: 20px; 
   
 }
 nav {
@@ -151,9 +202,15 @@ nav {
   width: 100%;
 }
 .nav-link {
-  color: #0BD3D3 !important; /* Ensure this is the color you want for the text */
-  text-decoration: none; /* Remove underline from links */
-  padding: 0.5rem; /* Optional: Adds padding for better clickability */
+  color: #0BD3D3 !important; 
+  text-decoration: none; 
+  padding: 0.5rem; 
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #f890e7 !important; 
+  
+  
 }
 .header-content {
   display: flex;
@@ -172,14 +229,41 @@ nav {
 .cat-show-header{
   color:white;
 }
-/* Cat-home */
-.cat-show-image {
-  max-width: 300px; /* Adjust as needed */
-  height: auto;
-  display: block; /* Center the image */
-  margin: 0 auto; /* Center the image horizontally */
+/* Cat-show */
+
+.cat-show-container {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
 }
-/* CatForm-CatNew.css */
+.cat-show-name {
+  margin-bottom: 20px;
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  
+}
+.cat-show-image {
+  max-width: 300px;
+  height: auto;
+  margin: 20px auto; 
+  display: block;
+}
+.cat-show-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cat-show-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  color: #fff;
+}
+/* CatForm-CatNew/CatEdit */
 form {
   max-width: 400px;
   margin: auto;
@@ -188,10 +272,21 @@ form {
   color: #ffffff;
   border-radius: 8px;
 }
-.svgContainer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1em;
+.cat-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 2em;
+  background-color: #000; 
+  color: #ffffff; 
+  border-radius: 8px;
+  border: 2px solid #D0D0D0; 
+}
+.add-cat-image {
+  width: 100%; 
+  max-width: 100px; 
+  height: auto;
+  display: block;
+  margin: 0 auto; 
 }
 .inputGroup {
   margin-bottom: 1.5em;
@@ -228,6 +323,58 @@ form {
   background-color: #f890e7;
 }
 
+/*--CatEdit--*/
+.new-page-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.back-button-container {
+  position: fixed; 
+  left: 20px; 
+  bottom: 100px; 
+  z-index: 1000; 
+}
+.edit-cat {
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #fff; 
+  text-align: center; 
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+
+}
+.back-button img {
+  width: 100px; 
+  height: auto; 
+  transition: transform 0.3s ease; 
+}
+.back-button:hover {
+  transform: scale(1.1); 
+}
+
+/*--CatNew--*/
+.add-new-cat {
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #fff; 
+  text-align: center; 
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+/*--CatFound--*/
+.not-found {
+  display: inline-block;
+  transition: transform 0.3s ease; 
+}
+.not-found:hover {
+  transform: scale(1.1); 
+}
 
 @keyframes glow {
   from {
@@ -252,6 +399,14 @@ form {
   }
 }
 
-
-
+@keyframes slide-in-bottom {
+  0% {
+      opacity: 0;
+      transform: translateY(50%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+}
 
