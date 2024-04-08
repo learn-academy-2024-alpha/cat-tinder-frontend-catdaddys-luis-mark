@@ -367,7 +367,7 @@ form {
   animation: glow 1s ease-in-out infinite alternate;
 }
 
-/*--CatFound--*/
+/*--CatNotFound--*/
 .not-found {
   display: inline-block;
   transition: transform 0.3s ease; 
@@ -375,6 +375,46 @@ form {
 .not-found:hover {
   transform: scale(1.1); 
 }
+
+/*--CatModel--*/
+.platinum-purr-profiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.profile-card {
+  background-color: #000;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.profile-card img {
+  width: 100%; /* Full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 250px; /* Maximum width */
+  max-height: 250px; /* Maximum height */
+  object-fit: cover; /* Cover the container without losing aspect ratio */
+  border-radius: 10px; /* Rounded corners to match the card */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+.profile-card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.profile-card p {
+  color: #fff;
+  font-size: 1rem;
+}
+.cat-text-model {
+  color: #fff !important;
+}
+
+
 
 @keyframes glow {
   from {

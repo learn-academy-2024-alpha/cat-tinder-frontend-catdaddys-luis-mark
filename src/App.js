@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
+import CatModel from "./pages/CatModel"
 import CatEdit from "./pages/CatEdit"
 import CatIndex from "./pages/CatIndex"
 import CatNew from "./pages/CatNew"
@@ -27,6 +28,7 @@ const App = () => {
     <Header />
     <Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/catmodel" element={<CatModel />} />
     <Route path="/catindex" element={<CatIndex cats={cats} />} />
     <Route
           path="catshow/:id"
