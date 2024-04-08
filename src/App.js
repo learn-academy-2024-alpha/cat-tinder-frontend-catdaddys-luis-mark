@@ -13,6 +13,7 @@ import "./App.css"
 const App = () => {
   const [cats, setCats] = useState([])
   useEffect(() => {
+    getCats()
   }, [])
   const getCats = async () => {
     try {
