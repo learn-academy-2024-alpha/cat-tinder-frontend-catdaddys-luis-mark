@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import CatIndex from '../pages/CatIndex';
-import mockCats from '../mockCats'; // Assuming you have this file with your mock data
+import mockCats from '../mockCats'; 
 
 describe('<CatIndex />', () => {
   it('renders without crashing', () => {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Routes, Route } from "react-router-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
+import CatModel from "./pages/CatModel"
 import CatEdit from "./pages/CatEdit"
 import CatIndex from "./pages/CatIndex"
 import CatNew from "./pages/CatNew"
@@ -78,12 +79,13 @@ const App = () => {
   }
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catindex" element={<CatIndex cats={cats} />} />
-        <Route
-          path="catshow/:id"
+
+    <Header />
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/catmodel" element={<CatModel />} />
+    <Route path="/catindex" element={<CatIndex cats={cats} />} />
+    <Route path="catshow/:id"
           element={<CatShow cats={cats} deleteCat={deleteCat} />}
         />
         <Route
