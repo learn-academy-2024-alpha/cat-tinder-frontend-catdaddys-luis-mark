@@ -10,13 +10,20 @@ import CatShow from "./pages/CatShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import "./App.css"
+import loadingCatImage from './assets/loadingcatimage.png'
+
+
+
+
 
 const App = () => {
   const [cats, setCats] = useState([])
-  useEffect(() => {
+  const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
     getCats()
   }, [])
   const getCats = async () => {
+    setIsLoading(true);
     try {
       const getResponse = await fetch("http://localhost:3000/cats")
       if (!getResponse.ok) {
@@ -26,8 +33,11 @@ const App = () => {
       setCats(getResult)
     } catch (error) {
       alert("Ooops something went wrong:", error.message)
+    }finally{
+      setIsLoading(false);
     }
   }
+
   const createNewCat = async (newCat) => {
     try {
       const postResponse = await fetch("http://localhost:3000/cats", {
@@ -77,10 +87,16 @@ const App = () => {
       alert("Oops something went wrong:", error.message)
     }
   }
+  
+  if (isLoading) {
+    return <div className="loading-screen">
+      <img src={loadingCatImage} alt="Loading..." />
+    </div>;
+  }
   return (
     <>
-
-    <Header />
+ 
+    <Header/>
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/catmodel" element={<CatModel />} />
