@@ -34,9 +34,12 @@ const App = () => {
     } catch (error) {
       alert("Ooops something went wrong:", error.message)
     }finally{
-      setIsLoading(false);
+      setTimeout(() => {
+      setIsLoading(false); // Set isLoading to false after a delay
+      }, 3000); // Adjust the delay time as needed (in milliseconds)
     }
   }
+
 
   const createNewCat = async (newCat) => {
     try {
@@ -87,7 +90,7 @@ const App = () => {
       alert("Oops something went wrong:", error.message)
     }
   }
-  
+
   if (isLoading) {
     return <div className="loading-screen">
       <img src={loadingCatImage} alt="Loading..." />
@@ -95,7 +98,6 @@ const App = () => {
   }
   return (
     <>
- 
     <Header/>
     <Routes>
     <Route path="/" element={<Home />} />
