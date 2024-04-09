@@ -4,6 +4,7 @@ import backbutton from "../assets/backbutton.png"
 
 const CatIndex = ({ cats }) => {
   return (
+    <div className='main-content'>
     <main className="cat-index-cards">
       {cats.map((cat) => (
         <div className="profile-card" key={cat.id}>
@@ -23,6 +24,7 @@ const CatIndex = ({ cats }) => {
         </div>
       ))}
     </main>
+    </div>
   );
 };
 

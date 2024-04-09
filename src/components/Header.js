@@ -11,7 +11,7 @@ const Header = () => {
       </NavLink>
 
       <nav className="header-nav-links">
-        <NavLink to="/catmodel" className="nav-link">PLATINUM PURR PROFILES</NavLink>
+        <NavLink to="/catmodel" className="nav-link">PLATINUM PURRFILES</NavLink>
         <NavLink to="/catindex" className="nav-link">CAT DADDY'S IN YOUR AREA</NavLink>
         <NavLink to="/catnew" className="nav-link">BECOME A CATDADDY</NavLink>
         <a href="https://catleidoscope.sergethew.com/" target="_blank" rel="noopener noreferrer" className="nav-link">CATLEIDOSCOPE!</a>

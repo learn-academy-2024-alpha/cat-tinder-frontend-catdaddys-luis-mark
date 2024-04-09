@@ -22,26 +22,38 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end; 
+  justify-content: flex-start; 
 }
 .footer-content {
   display: flex;
-  align-items: end;
-  justify-content: space-between;
-  padding-right: 20px;
-
+  flex-grow: 1; 
+  align-items: center;
+  justify-content: space-between; 
+  padding-left: 50px; 
 }
 .footer-text{
   color: #fff;
+  align-items: end;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
-  margin-right: 10px;
+  margin-right: 5px;
+}
+.footer-text, .catlogosmall {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
 }
 .catlogosmall{
   width: 4rem;
-  height:auto
+  height:auto;
+  margin-left: 10px;
 }
+.audio-player-container {
+  margin-right: auto; /* Pushes everything to the right */
+}
+
+
 /* --INDEX-- */
 .cat-index-cards {
   display: flex;
@@ -61,7 +73,7 @@ footer {
   justify-content: center; 
   align-items: center; 
   margin-top: 20px;
-  animation: slide-in-bottom 2s;
+  animation: slide-in-bottom 4s;
 }
 .homepage-phrase {
   font-size: 1.5rem;
@@ -377,6 +389,9 @@ form {
 }
 
 /*--CatModel--*/
+.main-content{
+  margin-bottom: 50px;
+}
 .platinum-purr-profiles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
