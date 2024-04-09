@@ -12,14 +12,10 @@ import NotFound from "./pages/NotFound"
 import "./App.css"
 import loadingCatImage from './assets/loadingcatimage.png'
 
-
-
-
-
 const App = () => {
   const [cats, setCats] = useState([])
   const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
+  useEffect(() => {
     getCats()
   }, [])
   const getCats = async () => {
@@ -33,11 +29,12 @@ const App = () => {
       setCats(getResult)
     } catch (error) {
       alert("Ooops something went wrong:", error.message)
-    }finally{
-      setIsLoading(false);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
     }
   }
-
   const createNewCat = async (newCat) => {
     try {
       const postResponse = await fetch("http://localhost:3000/cats", {
@@ -87,7 +84,7 @@ const App = () => {
       alert("Oops something went wrong:", error.message)
     }
   }
-  
+
   if (isLoading) {
     return <div className="loading-screen">
       <img src={loadingCatImage} alt="Loading..." />
@@ -95,18 +92,17 @@ const App = () => {
   }
   return (
     <>
- 
-    <Header/>
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/catmodel" element={<CatModel />} />
-    <Route path="/catindex" element={<CatIndex cats={cats} />} />
-    <Route path="catshow/:id"
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/catmodel" element={<CatModel />} />
+        <Route path="/catindex" element={<CatIndex cats={cats} />} />
+        <Route path="catshow/:id"
           element={<CatShow cats={cats} deleteCat={deleteCat} />}
         />
         <Route
           path="catnew/"
-          element={<CatNew cats={cats}createNewCat={createNewCat} />}
+          element={<CatNew cats={cats} createNewCat={createNewCat} />}
         />
         <Route
           path="catedit/:id"
